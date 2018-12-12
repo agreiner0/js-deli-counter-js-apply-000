@@ -4,6 +4,7 @@ function takeANumber(katzDeliLine, newCustomer){
 }
 
 
+
 function nowServing(katzDeliLine){
   if (katzDeliLine.length === 0){
     return "There is nobody waiting to be served!";
@@ -13,6 +14,22 @@ function nowServing(katzDeliLine){
     return `Currently serving ${customer}.`;
   }
 }
+
+
+function nowServing(katzDeli) {
+  let i = 0;
+  while (i < katzDeli.length) {
+    i++;
+  }
+  if (katzDeli.length === 0) {
+    return "There is nobody waiting to be served!";
+  }
+  else
+  return (`Currently serving ${katzDeli.shift()}.`);
+}
+
+
+
 
 function currentLine(katzDeliLine){
   var lineString = [];
@@ -26,3 +43,17 @@ function currentLine(katzDeliLine){
     }
     return "The line is currently:" + lineString;
 }
+
+
+
+function dropOut(katzDeliLine,linenumberlostCustomer){
+  if (linenumberlostCustomer > 0){
+      var indexLost =  linenumberlostCustomer - 1 ;
+      katzDeliLine = [...katzDeliLine.slice(0,indexLost),...katzDeliLine.slice(indexLost+1)];
+      return katzDeliLine;
+  }else{
+    return katzDeliLine.shift();
+  }
+
+}
+
